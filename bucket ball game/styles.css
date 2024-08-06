@@ -1,0 +1,192 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('pexels-pixabay-247600.jpg'); /* Add your background image here */
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+#info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#hearts {
+    display: flex;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    transition: transform 0.2s ease-out;
+}
+
+.heart.empty {
+    transform: scale(0.8);
+}
+
+#gameContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px; /* Space between the game box and the button */
+}
+
+#bucket {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: transparent;
+}
+
+.ball {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #f00; /* Red color for ball */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+#stopButton, #startButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-out, transform 0.2s ease-out;
+}
+
+#stopButton:hover, #startButton:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+#startButton {
+    right: 90px;
+}
+
+#homeButton {
+    padding: 12px 25px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #6ebf7c, #4c8b57);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: all 0.3s ease-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: buttonAppear 1s ease-out;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#homeButton:hover {
+    background: linear-gradient(135deg, #4c8b57, #6ebf7c);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional keyframes animation for entry effect */
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    max-width: 80%;
+}
+
+.popup h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.popup p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.popup button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease-out, transform 0.2s ease-out;
+}
+
+.popup button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.appliances {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.appliances > div {
+    text-align: center;
+    width: 45%; /* Adjust as needed */
+    margin-bottom: 20px;
+}
+
+.appliance-image {
+    width: 60px; /* Adjust image size as needed */
+    height: 60px; /* Adjust image size as needed */
+    margin-bottom: 10px;
+}
